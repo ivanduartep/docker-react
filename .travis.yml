@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ivanduarte/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run ivanduarte/docker-react npm run test -- --coverage
