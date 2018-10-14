@@ -7,3 +7,8 @@ before_install:
 
 script:
   - docker run ivanduarte/docker-react npm run test -- --coverage
+
+after_success:
+  - ping 192.168.0.38
+# deploy:
+#   provider: elasticbeanstalk
